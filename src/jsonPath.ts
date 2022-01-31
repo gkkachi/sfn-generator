@@ -33,7 +33,7 @@ export const jsonPathToFunc = <P extends string>(path: P) => <T>(x: T): JsonPath
   const p = path.startsWith('$') ? path.slice(1) : path;
   if (p === '') return x as JsonPath<T, P>;
   if (x instanceof Array && p.startsWith('[')) {
-    const indexStr = /^\[(\d+)\]/.exec(p)?.at(1);
+    const indexStr = /^\[(\d+)\]/.exec(p)?.[1];
     if (indexStr) {
       const index = parseInt(indexStr, 10);
       const nextPath = p.slice(indexStr.length + 2);
@@ -43,7 +43,7 @@ export const jsonPathToFunc = <P extends string>(path: P) => <T>(x: T): JsonPath
     }
   }
   if (p.startsWith('.')) {
-    const key = /^\.(\w+)/.exec(p)?.at(1);
+    const key = /^\.(\w+)/.exec(p)?.[1];
     if (key) {
       const nextPath = p.slice(key.length + 1);
       const nextX = (x as Record<string, unknown>)[key];
