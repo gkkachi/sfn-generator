@@ -1,0 +1,26 @@
+{
+  "include": [
+    "./**/*",
+    "./**/.*"
+  ],
+  "exclude": [
+    "./dist/**/*"
+  ],
+  "compilerOptions": {
+    "outDir": "./dist",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./type-definitions"
+    ],
+    "target": "ESNext",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "strict": true
+  }
+}
