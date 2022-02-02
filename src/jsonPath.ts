@@ -26,7 +26,7 @@ type Main<T, P extends string> = P extends ''
             : never
           : never;
 
-export type JsonPath<T, P extends string> = P extends `$${infer K}`
+export type JsonPath<T, P> = P extends `$${infer K}`
   ? Main<T, `${K}`> : never;
 
 export const jsonPathToFunc = <P extends string>(path: P) => <T>(x: T): JsonPath<T, P> => {
