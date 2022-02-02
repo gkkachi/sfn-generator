@@ -1,4 +1,3 @@
-import { A } from 'ts-toolbelt';
 import type { Expect } from './expect';
 import { Str2Num } from './str2num';
 
