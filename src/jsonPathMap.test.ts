@@ -44,6 +44,10 @@ const x: T = {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 type Cases = [
   Expect<Equal<
+  JsonPathMap<T, undefined>,
+  T
+  >>,
+  Expect<Equal<
   JsonPathMap<T, { a: { b: 'foo' } }>,
   { a: { b: 'foo' } }
   >>,
@@ -72,6 +76,9 @@ type Cases = [
 ];
 
 describe('JsonPathMap', () => {
+  test('undefined', () => {
+    expect(jsonPathMapToFunc(undefined)(x)).toEqual(x);
+  });
   test('simple', () => {
     expect(jsonPathMapToFunc({ a: { b: 'foo' } })(x)).toEqual({ a: { b: 'foo' } });
   });
