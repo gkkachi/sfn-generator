@@ -15,4 +15,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:jest/recommended',
   ],
+  rules: {
+    'import/prefer-default-export': 'off',
+  },
 };
