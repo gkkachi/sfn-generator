@@ -41,7 +41,6 @@ const x: T = {
   xyz: 'xyz',
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type Cases = [
   Expect<Equal<
   JsonPathMap<T, undefined>,

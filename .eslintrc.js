@@ -18,4 +18,13 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
   },
+  overrides: [
+    {
+      files: ['*.test.ts'],
+      rules: {
+        '@typescript-eslint/no-unused-expressions': 'off',
+        '@typescript-eslint/no-unused-vars': 'off',
+      },
+    }
+  ],
 };
